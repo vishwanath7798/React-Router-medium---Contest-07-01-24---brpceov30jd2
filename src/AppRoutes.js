@@ -1,11 +1,15 @@
-import React from 'react'
+import React from 'react';
+import { Route, Switch } from 'react-router-dom';
+import { BackgroundColorChanger } from './BackgroundColorChanger';
+import { Calculator } from './Calculator';
+import { Index } from './Index';
 
-import { BackgroundColorChanger } from './Pages/BackgroundColorChanger'
-import { Calculator } from './Pages/Calculator'
-import { Index } from './Pages/Index'
-
-export const AppRoutes = () =>{
-    return (
-
-    )
-}
+export const AppRoutes = () => {
+  return (
+    <Switch>
+      <Route path="/bgcolor/:colorname" component={BackgroundColorChanger} />
+      <Route path="/calculator" component={Calculator} />
+      <Route path="/" exact component={Index} />
+    </Switch>
+  );
+};
